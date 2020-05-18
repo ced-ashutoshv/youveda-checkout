@@ -2,3 +2,9 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+.col-1,.col-2 {
+	max-width: 100% !important;
+}
+span.select2.select2-container.select2-container--default.select2-container--focus {
+    width: 100% !important;
+}

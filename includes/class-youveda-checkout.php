@@ -167,14 +167,16 @@ class Youveda_Checkout {
 	 * @access   private
 	 */
 	private function define_public_hooks() {
+		
+		if( false !== strpos( $_SERVER['REQUEST_URI'] , '/checkout/' ) ) {
 
-		$plugin_public = new Youveda_Checkout_Public( $this->get_plugin_name(), $this->get_version() );
+			$plugin_public = new Youveda_Checkout_Public( $this->get_plugin_name(), $this->get_version() );
+			$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
+			$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-
-		// Customise Email template.
-		$this->loader->add_filter( 'woocommerce_locate_template', $plugin_public, 'mwb_youveda_override_woocommerce_template', 99, 3 );
+			// Customise Include of Woocommerce template.
+			$this->loader->add_filter( 'woocommerce_locate_template', $plugin_public, 'mwb_youveda_override_woocommerce_template', 99, 3 );	
+		}
 	}
 
 	/**
