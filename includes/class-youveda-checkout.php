@@ -176,6 +176,8 @@ class Youveda_Checkout {
 
 			// Customise Include of Woocommerce template.
 			$this->loader->add_filter( 'woocommerce_locate_template', $plugin_public, 'mwb_youveda_override_woocommerce_template', 99, 3 );	
+
+			$this->loader->add_action( 'woocommerce_init', $plugin_public, 'hook_unhook_woocommerce_templates' );
 		}
 	}
 

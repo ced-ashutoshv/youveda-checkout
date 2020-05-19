@@ -135,5 +135,19 @@ class Youveda_Checkout_Public {
 	    return $template;
 	}
 
+	/**
+	 * Override Woocommerce Template Positioning.
+	 *
+	 * @since    1.0.0
+	 */
+	public function hook_unhook_woocommerce_templates(){
+
+		/**
+		 * Payment Section.
+		 */
+		remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+		add_action( 'hook_woocommerce_checkout_payment', 'woocommerce_checkout_payment', 20 );
+	}
+
 // End of class.
 }
