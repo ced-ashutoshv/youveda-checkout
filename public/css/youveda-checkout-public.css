@@ -8,32 +8,66 @@
  span.select2.select2-container.select2-container--default.select2-container--focus {
  	width: 100% !important;
  }
- .woocommerce-shipping-fields{
+ /*.woocommerce-shipping-fields{
 	background-color: #ffffff;
 	padding: 20px;
-}
+}*/
 .bgColorWhite.wc-checkout-footer {
 	margin-top: 100px
 }
-.woocommerce-shipping-fields__field-wrapper {
-    background: #fff;
+.payment-fields-wrap {
+    padding: 15px;
+}
+.input-radio {
+	display: none;
+}
+.ic_tooltip {
+	padding: 10px;
 }
  
-.woocommerce-billing-fields {
+/*.woocommerce-billing-fields {
 	background-color: #ffffff;
 	padding: 20px;
 	display: flex;
 	flex-direction: column-reverse;
-}
+}*/
 #order_review {
-	display: flex;
-	flex-direction: column-reverse;
 	background-color: #ffffff;
-	padding: 20px;
 }
 #customer_details {
 	width: 100%;
+	background: #ffffff;
+	padding: 10px;
 }
+.form-row.place-order {
+	width: 100% !important;
+}
+#wc-authorize-net-cim-credit-card-account-number_field {
+    width: 100% !important;
+}
+.wc_payment_method.payment_method_paypal {
+	display: none!important;
+}
+.woocommerce-terms-and-conditions-wrapper ..form-row.validate-required {
+	width: 100%!important;
+}
+.woocommerce-terms-and-conditions-wrapper {
+    display: flex!important;
+}
+body.woocommerce-checkout .woocommerce-checkout-payment button[type="submit"] {
+    float: left!important;
+}
+.form-row.validate-required.woocommerce-validated {
+    width: 100%!important;
+}
+
+/*.form-row.validate-required.woocommerce-invalid.woocommerce-invalid-required-field {
+	width: 100%!important;
+}*/
+
+/*.wc-authorize-net-cim-credit-card-new-payment-method-form.js-wc-authorize-net-cim-credit-card-new-payment-method-form p:not:first-child {
+  display: flex!important;
+}*/
 
 @media only screen and (min-width: 600px) {
 .checkout.woocommerce-checkout{
@@ -44,8 +78,10 @@
 	max-width: 40%;
 	background: #fff;
 	padding: 20px;
-	display: flex;
-	flex-direction: column-reverse;
+	margin-left: 30px;
+	height: max-content;
+	/*display: flex;
+	flex-direction: column-reverse;*/
 }
 
 }
