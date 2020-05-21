@@ -73,12 +73,10 @@ class Youveda_Checkout {
 			$this->version = '1.0.0';
 		}
 		$this->plugin_name = 'youveda-checkout';
-
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
-
 	}
 
 	/**
@@ -168,16 +166,22 @@ class Youveda_Checkout {
 	 */
 	private function define_public_hooks() {
 		
+		$plugin_public = new Youveda_Checkout_Public( $this->get_plugin_name(), $this->get_version() );
+
+		// Everything for checkout only.
 		if( false !== strpos( $_SERVER['REQUEST_URI'] , '/checkout/' ) ) {
 
-			$plugin_public = new Youveda_Checkout_Public( $this->get_plugin_name(), $this->get_version() );
 			$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 			$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
 			// Customise Include of Woocommerce template.
 			$this->loader->add_filter( 'woocommerce_locate_template', $plugin_public, 'mwb_youveda_override_woocommerce_template', 99, 3 );	
 
+			// Remove and include with Woocommerce hooks.
 			$this->loader->add_action( 'woocommerce_init', $plugin_public, 'hook_unhook_woocommerce_templates' );
+
+			// Add compact login section for mobile
+			$this->loader->add_action( 'woocommerce_before_checkout_form', $plugin_public, 'mwb_youveda_add_login_section' );
 		}
 	}
 

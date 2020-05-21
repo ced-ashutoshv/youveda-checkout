@@ -25,12 +25,6 @@
 	padding: 10px;
 }
  
-/*.woocommerce-billing-fields {
-	background-color: #ffffff;
-	padding: 20px;
-	display: flex;
-	flex-direction: column-reverse;
-}*/
 #order_review {
 	background-color: #ffffff;
 }
@@ -45,9 +39,6 @@
 #wc-authorize-net-cim-credit-card-account-number_field {
     width: 100% !important;
 }
-.wc_payment_method.payment_method_paypal {
-	display: none!important;
-}
 .woocommerce-terms-and-conditions-wrapper ..form-row.validate-required {
 	width: 100%!important;
 }
@@ -60,28 +51,23 @@ body.woocommerce-checkout .woocommerce-checkout-payment button[type="submit"] {
 .form-row.validate-required.woocommerce-validated {
     width: 100%!important;
 }
+.hidden_section {
+	display: none;
+}
 
-/*.form-row.validate-required.woocommerce-invalid.woocommerce-invalid-required-field {
-	width: 100%!important;
-}*/
-
-/*.wc-authorize-net-cim-credit-card-new-payment-method-form.js-wc-authorize-net-cim-credit-card-new-payment-method-form p:not:first-child {
-  display: flex!important;
-}*/
-
+/*-----------------------------
+		Media Query
+ -----------------------------*/
 @media only screen and (min-width: 600px) {
-.checkout.woocommerce-checkout{
-	display: flex;
-}
-#order_review {
-	width: 100%;
-	max-width: 40%;
-	background: #fff;
-	padding: 20px;
-	margin-left: 30px;
-	height: max-content;
-	/*display: flex;
-	flex-direction: column-reverse;*/
-}
-
+	.checkout.woocommerce-checkout{
+		display: flex;
+	}
+	#order_review {
+		width: 100%;
+		max-width: 40%;
+		background: #fff;
+		padding: 20px;
+		margin-left: 30px;
+		height: max-content;
+	}
 }

@@ -1,32 +1,27 @@
-(function( $ ) {
-	'use strict';
+jQuery(document).ready(function($){
+	console.clear();
+	if ( true == mwb_youveda.mobile_view ) {
 
-	/**
-	 * All of the code for your public-facing JavaScript source
-	 * should reside in this file.
-	 *
-	 * Note: It has been assumed you will write jQuery code here, so the
-	 * $ function reference has been prepared for usage within the scope
-	 * of this function.
-	 *
-	 * This enables you to define handlers, for when the DOM is ready:
-	 *
-	 * $(function() {
-	 *
-	 * });
-	 *
-	 * When the window is loaded:
-	 *
-	 * $( window ).load(function() {
-	 *
-	 * });
-	 *
-	 * ...and/or other possibilities.
-	 *
-	 * Ideally, it is not considered best practise to attach more than a
-	 * single DOM-ready or window-load handler for a particular page.
-	 * Although scripts in the WordPress core, Plugins and Themes may be
-	 * practising this, we should strive to set a better example in our own work.
-	 */
+		var login_section = '';
 
-})( jQuery );
+		// Hide section by default.
+		if ( 0 < jQuery( '.mwb_youveda_logged_in_text' ).length ) {
+
+			login_section = jQuery( '.mwb_youveda_logged_in_text' );
+			if ( login_section.hasClass( 'hide_checkout_sections' ) ) {
+				jQuery( '#customer_details' ).hide();
+			}
+		}
+		
+		// Show sections on click.
+		jQuery(document).on( 'click', '.mwb_youveda_logged_in_toggle', function(e) {
+
+			login_section.toggleClass( 'hide_checkout_sections' );
+			jQuery( '#customer_details' ).show();
+		});
+	
+	// End if Mbbile View.
+	}
+
+// End if JS
+});

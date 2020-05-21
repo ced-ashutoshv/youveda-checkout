@@ -98,6 +98,15 @@ class Youveda_Checkout_Public {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/youveda-checkout-public.js', array( 'jquery' ), $this->version, false );
 
+		wp_localize_script(
+			$this->plugin_name,
+			'mwb_youveda',
+			array(
+				'ajaxurl'       => admin_url( 'admin-ajax.php' ),
+				'mobile_view'   => wp_is_mobile(),
+				'auth_nonce'    => wp_create_nonce( 'mwb_youveda_nonce' ),
+			)
+		);
 	}
 
 	/**
@@ -148,6 +157,52 @@ class Youveda_Checkout_Public {
 		remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
 		add_action( 'hook_woocommerce_checkout_payment', 'woocommerce_checkout_payment', 20 );
 	}
+
+	/**
+	 * Add login section in mobile view.
+	 *
+	 * @since    1.0.0
+	 */
+	public function mwb_youveda_add_login_section( $checkout ){
+
+		// For mobile view only.
+		if( ! function_exists( 'wp_is_mobile' ) || ! wp_is_mobile() ) {
+			return;
+		}
+
+		// For logged in users only.
+		if ( ! is_user_logged_in() ) {
+			return;
+		}
+
+		$current_user = ! empty( wp_get_current_user()->data ) ? wp_get_current_user()->data : false;
+		if( ! empty( $current_user ) ) {
+
+  			$display_name = ! empty( $current_user->display_name ) ? $current_user->display_name : false;
+
+  			if ( empty( $display_name ) ) {
+  				
+  				$display_name = ! empty( $current_user->user_nicename ) ? $current_user->user_nicename : false;
+  			}
+		}
+
+		?>
+		<div class='mwb_youveda_compact_login'>
+			<?php 	
+				$login_description = sprintf( 
+					'<p class="mwb_youveda_logged_in_text hide_checkout_sections">%s %s%s <br><a class="mwb_youveda_logged_in_toggle" href="javascript:void(0)">%s</a>.</p>', 
+					esc_html__( 'You are logged in as', 'youveda-checkout' ), 
+					$display_name,
+					esc_html__( '. If you wish to change your shipping and payment information','youveda-checkout' ),
+					esc_html__( 'click here', 'youveda-checkout' )
+				);
+
+				echo ( $login_description ); 
+			?>
+			</div>
+		<?php
+	}
+
 
 // End of class.
 }
