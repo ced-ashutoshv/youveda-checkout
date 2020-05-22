@@ -16,8 +16,11 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+
+$hide_on_mobile = function_exists( 'wp_is_mobile' ) && wp_is_mobile() ? 'hidden_section' : '';
+
 ?>
-<table class="shop_table woocommerce-checkout-review-order-table">
+<table class="shop_table woocommerce-checkout-review-order-table <?php echo esc_html( $hide_on_mobile ); ?>">
 	<thead>
 		<tr>
 			<th class="product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>

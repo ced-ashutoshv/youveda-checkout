@@ -2,21 +2,17 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
- .col-1,.col-2 {
- 	max-width: 100% !important;
- }
- span.select2.select2-container.select2-container--default.select2-container--focus {
- 	width: 100% !important;
- }
- /*.woocommerce-shipping-fields{
-	background-color: #ffffff;
-	padding: 20px;
-}*/
+.col-1,.col-2 {
+	max-width: 100% !important;
+}
+span.select2.select2-container.select2-container--default.select2-container--focus {
+	width: 100% !important;
+}
 .bgColorWhite.wc-checkout-footer {
 	margin-top: 100px
 }
 .payment-fields-wrap {
-    padding: 15px;
+	padding: 15px;
 }
 .input-radio {
 	display: none;
@@ -24,7 +20,7 @@
 .ic_tooltip {
 	padding: 10px;
 }
- 
+
 #order_review {
 	background-color: #ffffff;
 }
@@ -32,42 +28,94 @@
 	width: 100%;
 	background: #ffffff;
 	padding: 10px;
+	flex: 10%;
 }
 .form-row.place-order {
 	width: 100% !important;
 }
 #wc-authorize-net-cim-credit-card-account-number_field {
-    width: 100% !important;
+	width: 100% !important;
 }
 .woocommerce-terms-and-conditions-wrapper ..form-row.validate-required {
 	width: 100%!important;
 }
 .woocommerce-terms-and-conditions-wrapper {
-    display: flex!important;
+	display: flex!important;
 }
 body.woocommerce-checkout .woocommerce-checkout-payment button[type="submit"] {
-    float: left!important;
+	float: left!important;
 }
-.form-row.validate-required.woocommerce-validated {
-    width: 100%!important;
-}
-.hidden_section {
+.hidden_section, .place-order {
 	display: none;
 }
-
+.mwb_youveda_place_order {
+	display: block !important;
+}
+.wc-authorize-net-cim-credit-card-new-payment-method-form.js-wc-authorize-net-cim-credit-card-new-payment-method-form {
+	display: flex;
+	flex-wrap: wrap;
+}
+#wc-authorize-net-cim-credit-card-csc_field {
+	flex: 4px;
+}
+.woocommerce-checkout-review-order .ic_tooltip:first-child {
+	display: none!important;
+}
+.form-row.place-order.mwb_youveda_place_order {
+	text-align: center!important;
+	margin-bottom: 30px!important;
+}
+.wc_payment_methods.payment_methods.methods {
+	display: flex !important;
+	flex-wrap: wrap;
+}
+.payment_box.payment_method_authorize_net_cim_credit_card {
+	margin-top: 60px!important;
+}
+.woocommerce-page .entry-wrap .wc_payment_methods > .wc_payment_method > label {
+    float: left!important;
+}
+#bill-to-different-address {
+    margin: auto;
+}
+.woocommerce-billing-fields__field-wrapper {
+	display: none;
+}
 /*-----------------------------
 		Media Query
- -----------------------------*/
-@media only screen and (min-width: 600px) {
+-----------------------------*/
+@media only screen and (max-width: 1024px){
+	h3#order_review_heading {
+	    padding: 10px;
+	}
+	.woocommerce-checkout-review-order-table {
+		display: none;
+	}
+	.woocommerce-notices-wrapper {
+	    margin-bottom: 10px;
+	}
+	.entry-content:before, .entry-content:after {
+	    content: "";
+	    display: none !important;
+	    width: 0px;
+	}
+}
+@media only screen and (max-width: 600px){
 	.checkout.woocommerce-checkout{
 		display: flex;
+		flex-wrap: wrap;
 	}
 	#order_review {
 		width: 100%;
-		max-width: 40%;
 		background: #fff;
-		padding: 20px;
-		margin-left: 30px;
 		height: max-content;
+		margin-bottom: 8px;
+	}
+	.woocommerce-checkout form h3 {
+	    font-size: 19px !important;
+	}
+	h3#order_review_heading {
+	    margin: auto;
+	    padding: 10px;
 	}
 }

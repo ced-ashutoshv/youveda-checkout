@@ -24,8 +24,11 @@ defined( 'ABSPATH' ) || exit;
 		<h3><?php esc_html_e( 'Billing &amp; Shipping', 'woocommerce' ); ?></h3>
 
 	<?php else : ?>
-
-		<h3><?php esc_html_e( 'Billing details', 'woocommerce' ); ?></h3>
+		<h3 id="bill-to-different-address" class="">
+		<label class="woocommerce-form__label woocommerce-form__label-for-checkbox checkbox">
+			<input id="bill-to-different-address-checkbox" class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" type="checkbox" name="bill_to_different_address" value="1" style="outline: none;"><span><?php esc_html_e( 'Use different billing information', 'woocommerce' ); ?></span>
+		</label>
+	</h3>
 
 	<?php endif; ?>
 

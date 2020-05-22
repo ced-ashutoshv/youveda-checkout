@@ -55,15 +55,44 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 	
 	<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
 	
-	
 	<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
 	<div id="order_review" class="woocommerce-checkout-review-order">
-		<h3 id="order_review_heading"><?php esc_html_e( 'Order Summary', 'woocommerce' ); ?></h3>
+
+		<?php if ( function_exists( 'wp_is_mobile' ) && wp_is_mobile() ) : ?>
+			<a class="order_review_heading_toggle" href="javascript:void(0)">
+		<?php endif; ?>
+
+		<h3 id="order_review_heading" title="Click here to show order details."><?php esc_html_e( 'Order Summary', 'woocommerce' ); ?></h3>
+
+		<?php if ( function_exists( 'wp_is_mobile' ) && wp_is_mobile() ) : ?>
+			</a>
+		<?php endif; ?>
 		<?php do_action( 'woocommerce_checkout_order_review' ); ?>
 	</div>
 
 	<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
+
+	<div class="form-row place-order mwb_youveda_place_order">
+		<noscript>
+			<?php
+			/* translators: $1 and $2 opening and closing emphasis tags respectively */
+			printf( esc_html__( 'Since your browser does not support JavaScript, or it is disabled, please ensure you click the %1$sUpdate Totals%2$s button before placing your order. You may be charged more than the amount stated above if you fail to do so.', 'woocommerce' ), '<em>', '</em>' );
+			?>
+			<br/><button type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="<?php esc_attr_e( 'Update totals', 'woocommerce' ); ?>"><?php esc_html_e( 'Update totals', 'woocommerce' ); ?></button>
+		</noscript>
+
+		<?php wc_get_template( 'checkout/terms.php' ); ?>
+
+		<?php do_action( 'woocommerce_review_order_before_submit' ); ?>
+
+		<?php $order_button_text = 'Place order'; ?>
+		<?php echo apply_filters( 'woocommerce_order_button_html', '<button type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '">' . esc_html( $order_button_text ) . '</button>' ); // @codingStandardsIgnoreLine ?>
+
+		<?php do_action( 'woocommerce_review_order_after_submit' ); ?>
+
+		<?php wp_nonce_field( 'woocommerce-process_checkout', 'woocommerce-process-checkout-nonce' ); ?>
+	</div>
 
 </form>
 
