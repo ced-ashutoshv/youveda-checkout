@@ -94,55 +94,57 @@
 
 /*-----------------------------
 		Media Query
-		-----------------------------*/
-		@media only screen and (max-width: 1024px){
-			h3#order_review_heading {
-				padding: 10px;
-			}
-			.woocommerce-checkout-review-order-table {
-				display: none;
-			}
-			.woocommerce-notices-wrapper {
-				margin-bottom: 10px;
-			}
-			.entry-content:before, .entry-content:after {
-				content: "";
-				display: none !important;
-				width: 0px;
-			}
-		}
-		@media only screen and (max-width: 600px){
-			.checkout.woocommerce-checkout{
-				display: flex;
-				flex-wrap: wrap;
-			}
-			#order_review {
-				width: 100%;
-				background: #fff;
-				height: max-content;
-				margin-bottom: 8px;
-			}
-			.woocommerce-checkout form h3 {
-				font-size: 19px !important;
-			}
-			h3#order_review_heading {
-				margin: auto;
-				padding: 10px;
-			}
-		}
-		@media only screen and (min-width: 600px) {
-			#order_review {
-				width: 100%;
-				max-width: 40%;
-				margin-left: 35px;
-			}
-			#customer_details {
-				width: 100%;
-				max-width: 60%;
-				padding: 10px;
-				flex: 10%;
-			}
-			#wc-authorize-net-cim-credit-card-expiry_field {
-				margin-right: 4%;
-			}
-		}
+-----------------------------*/
+@media only screen and (max-width: 1024px){
+	h3#order_review_heading {
+		padding: 10px;
+	}
+	.woocommerce-checkout-review-order-table {
+		display: none;
+	}
+	.woocommerce-notices-wrapper {
+		margin-bottom: 10px;
+	}
+	.entry-content:before, .entry-content:after {
+		content: "";
+		display: none !important;
+		width: 0px;
+	}
+}
+@media only screen and (max-width: 600px){
+	.checkout.woocommerce-checkout{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	#order_review {
+		width: 100%;
+		background: #fff;
+		height: max-content;
+		margin-bottom: 8px;
+		padding: 0px;
+	}
+	.woocommerce-checkout form h3 {
+		font-size: 19px !important;
+	}
+	#order_review_heading {
+		margin: auto;
+		padding: 10px;
+	}
+}
+@media only screen and (min-width: 600px) {
+	#order_review {
+		width: 100%;
+		max-width: 40%;
+		margin-left: 35px;
+		height: max-content;
+	}
+	#customer_details {
+		width: 100%;
+		max-width: 60%;
+		padding: 10px;
+		flex: 10%;
+	}
+	#wc-authorize-net-cim-credit-card-expiry_field {
+		margin-right: 4%;
+	}
+}
