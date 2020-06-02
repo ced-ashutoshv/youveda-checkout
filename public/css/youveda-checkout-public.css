@@ -12,6 +12,9 @@
  	display: flex!important;
  	flex-wrap: wrap!important;
  }
+.woocommerce-shipping-fields {
+    padding-top: 12px;
+}
  .bgColorWhite.wc-checkout-footer {
  	margin-top: 100px
  }
@@ -69,6 +72,7 @@
  	display: flex ;
  	flex-wrap: wrap;
  	position: relative;
+ 	margin-bottom: 0px;
  }
  .payment_box.payment_method_authorize_net_cim_credit_card {
  	margin-top: 60px;
@@ -91,6 +95,28 @@
  	left: 135px;
  	right: auto;
  }
+ .order_review_cart_icon {
+    margin-right: 10px;
+}
+.order_review_cart_total {
+	float: right;
+}
+.select2.select2-container.select2-container--default {
+    width: 100% !important;
+}
+.order_review_heading_toggle {
+	transition: 0.2s linear all;
+}
+.shop_table.woocommerce-checkout-review-order-table {
+	transition: all 0.5s ease-out 0s;
+}
+.payment_box.payment_method_paypal {
+    margin-top: 50px;
+    margin-left: -130px;
+}
+.woocommerce-billing-fields {
+    margin-top: 20px;
+}
 
 /*-----------------------------
 		Media Query
@@ -129,6 +155,12 @@
 	#order_review_heading {
 		margin: auto;
 		padding: 10px;
+	}
+	.order-summary-toggle__icon {
+		margin-bottom: -4px;
+	}
+	#customer_details {
+		width: 100%;
 	}
 }
 @media only screen and (min-width: 600px) {

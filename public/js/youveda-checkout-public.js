@@ -1,5 +1,5 @@
 jQuery(document).ready(function($){
-	console.clear();
+	
 	if ( true == mwb_youveda.mobile_view ) {
 
 		var login_section = '';
@@ -52,6 +52,28 @@ jQuery(document).ready(function($){
 	// Hide Text from labels in payment methods.
 	var t = jQuery(".wc_payment_method > label").html().split('<span class="d-none">');
 	jQuery(".wc_payment_method > label").html( '<span class="d-none">' + t[1]);
+
+	// Order button text on payment method change
+	jQuery(document).on('change', '.payment_method_paypal', function() {
+	   jQuery( '.mwb_youveda_place_order_button' ).text( 'Proceed To Paypal' );
+	});
+
+	jQuery(document).on('change', '.payment_method_authorize_net_cim_credit_card', function() {
+	   jQuery( '.mwb_youveda_place_order_button' ).text( 'Place Order' );
+	});
+
+	if( jQuery( '#payment_method_paypal' ).attr( 'checked' ) ) {
+		
+		setTimeout( function() {
+			jQuery( '.mwb_youveda_place_order_button' ).text( 'Proceed To Paypal' );
+		} , 2000);
+	}
+	else {
+
+		setTimeout( function() {
+			jQuery( '.mwb_youveda_place_order_button' ).text( 'Place Order' );
+		} , 2000);
+	}
 
 // End if JS
 });
