@@ -38,11 +38,11 @@ jQuery(document).ready(function($){
 
 			// Is visible.
 			if ( jQuery( ".woocommerce-checkout-review-order-table" ).hasClass( 'hidden_section' ) ) { 
-			  jQuery( '.order_review_text' ).text( 'Hide Order Summary' );
+			  jQuery( '.order_review_arrow_img' ).toggleClass( 'order_review_arrow_up' );
 			} 
 			// Is Hidden.
 			else {
-			  jQuery( '.order_review_text' ).text( 'Show Order Summary' );
+			  jQuery( '.order_review_arrow_img' ).toggleClass( 'order_review_arrow_up' );
 			}
 		});
 	

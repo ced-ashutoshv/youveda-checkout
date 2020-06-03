@@ -160,7 +160,7 @@ class Youveda_Checkout_Public {
 		/**
 		 * Addition Of Actions.
 		 */
-		add_action( 'woocommerce_review_order_after_cart_contents', 'woocommerce_checkout_coupon_form', 20 );
+		// add_action( 'woocommerce_review_order_after_cart_contents', 'woocommerce_checkout_coupon_form', 20 );
 		add_action( 'hook_woocommerce_checkout_payment', 'woocommerce_checkout_payment', 20 );
 	}
 
