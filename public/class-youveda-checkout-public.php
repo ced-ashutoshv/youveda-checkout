@@ -152,9 +152,15 @@ class Youveda_Checkout_Public {
 	public function hook_unhook_woocommerce_templates(){
 
 		/**
-		 * Payment Section.
+		 * Removal Of Actions.
 		 */
 		remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+		remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 );
+
+		/**
+		 * Addition Of Actions.
+		 */
+		add_action( 'woocommerce_review_order_after_cart_contents', 'woocommerce_checkout_coupon_form', 20 );
 		add_action( 'hook_woocommerce_checkout_payment', 'woocommerce_checkout_payment', 20 );
 	}
 
