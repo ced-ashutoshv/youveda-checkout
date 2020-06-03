@@ -95,8 +95,8 @@
  	left: 135px;
  	right: auto;
  }
- .order_review_cart_icon {
-    margin-right: 10px;
+.order_review_arrow_up {
+    transform: rotate(180deg);
 }
 .order_review_cart_total {
 	float: right;
