@@ -50,8 +50,8 @@ jQuery(document).ready(function($){
 	}
 
 	// Hide Text from labels in payment methods.
-	var t = jQuery(".wc_payment_method > label").html().split('<span class="d-none">');
-	jQuery(".wc_payment_method > label").html( '<span class="d-none">' + t[1]);
+	// var t = jQuery(".wc_payment_method > label").html().split('<span class="d-none">');
+	// jQuery(".wc_payment_method > label").html( '<span class="d-none">' + t[1]);
 
 	// Order button text on payment method change
 	jQuery(document).on('change', '.payment_method_paypal', function() {
@@ -72,6 +72,31 @@ jQuery(document).ready(function($){
 
 		setTimeout( function() {
 			jQuery( '.mwb_youveda_place_order_button' ).text( 'Place Order' );
+		} , 2000);
+	}
+
+	if( false == mwb_youveda.mobile_view &&  jQuery( '.wc_payment_methods' ).length > 0 ) {
+		
+		setTimeout( function() {
+			jQuery( '.wc_payment_methods' ).append( '<li class="wc_payment_method payment_method_amazon_payments_advanced "><div class="d-none"><input id="payment_method_amazon_payments_advanced" type="radio" class="input-radio" name="payment_method" value="amazon_payments_advanced" data-order_button_text="">Amazon Pay</div><label for="payment_method_amazon_payments_advanced"><span class="d-none"><img src="https://www.youveda.com/wp-content/plugins/woocommerce-gateway-amazon-payments-advanced/assets/images/amazon-payments.png" alt="Amazon Pay"></span><img src="https://www.youveda.com/wp-content/themes/x-child/images/gateways/amazon-pay.png"></label></li>' );
+		} , 2000);
+	}
+
+	else if( true == mwb_youveda.mobile_view &&  jQuery( '.wc_payment_methods' ).length > 0 && jQuery( '#pay_with_amazon' ).length > 0  ){
+		setTimeout( function() {
+			jQuery( '.wc_payment_methods' ).append( '<li class="wc_payment_method payment_method_amazon_payments_advanced "><div class="d-none"><input id="payment_method_amazon_payments_advanced" type="radio" class="input-radio" name="payment_method" value="amazon_payments_advanced" data-order_button_text="">Amazon Pay</div><label for="payment_method_amazon_payments_advanced"><span class="d-none"><img src="https://www.youveda.com/wp-content/plugins/woocommerce-gateway-amazon-payments-advanced/assets/images/amazon-payments.png" alt="Amazon Pay"></span><img src="https://www.youveda.com/wp-content/themes/x-child/images/gateways/amazon-pay.png"></label></li>' );
+		} , 2000);
+	}
+	else {
+		setTimeout( function() {
+			jQuery( '.payment_method_amazon_payments_advanced' ).hide();
+		} , 2000);
+	}
+
+	if( false == mwb_youveda.mobile_view && jQuery( '#amazon-logout' ).length > 0 ) {
+		
+		setTimeout( function() {
+			jQuery( '.woocommerce-terms-and-conditions-wrapper' ).css( 'width', '535px' );
 		} , 2000);
 	}
 

@@ -120,7 +120,7 @@
  	font-weight: 600;
  }
  .woocommerce-billing-fields {
- 	margin-top: 35px;
+ 	margin-top: 20px;
  }
  .mwb-custom-item-quantity {
  	font-size: 11px;
@@ -154,11 +154,45 @@
  	width: 50%;
  	background: #ffffff;
  	padding-top: 17px;
+ 	margin-bottom: 0px !important;
  }
  body.woocommerce-checkout #amazon_consent_widget {
  	width: 94%!important;
  	margin: 15px!important;
  }
+ .wc_payment_method.payment_method_authorize_net_cim_credit_card.checked {
+ 	margin-bottom: 0 !important;
+ }
+ .wc_payment_method.payment_method_authorize_net_cim_credit_card {
+ 	width: 100%!important;
+ }
+ .wc_payment_method.payment_method_amazon_payments_advanced {
+ 	position: absolute;
+ 	top: 0;
+ 	left: 240px;
+ 	right: auto;
+ }
+ ul .wc_payment_methods.payment_methods.methods li:nth-child(1) {
+ 	margin-bottom: 0!important;
+ }
+.woocommerce-terms-and-conditions-wrapper {
+    display: flex!important;
+    background: #ffffff;
+    max-width: 607px;
+    margin-bottom: 10px;
+    padding-left: 0px;
+    width: 100%;
+}
+input#terms {
+    margin: 7px 6px 0px 6px;
+    outline: none;
+}
+span.woocommerce-terms-and-conditions-checkbox-text {
+    font-size: 16px;
+}
+input#mailchimp_woocommerce_newsletter {
+    margin-right: 4px;
+}
 /*-----------------------------
 		Media Query
 		-----------------------------*/
@@ -176,6 +210,12 @@
 				content: "";
 				display: none !important;
 				width: 0px;
+			}
+			.wc_payment_method.payment_method_authorize_net_cim_credit_card.checked {
+				margin-bottom: 0 !important;
+			}
+			.wc_payment_method.payment_method_authorize_net_cim_credit_card {
+				width: 100%!important;
 			}
 		}
 		@media only screen and (max-width: 600px){
@@ -220,6 +260,31 @@
 				position: absolute;
 				top: 0;
 				left: 43px;
+			}
+		}
+		@media only screen and (max-width: 600px){
+			.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox {
+			    margin-top: 0px;
+			}
+			input#bill-to-different-address-checkbox {
+			    margin-top: 7px;
+			    margin-right: 3px;
+			}
+			.woocommerce-terms-and-conditions-wrapper {
+			   max-width: 100%;
+			}
+			.woocommerce-checkout form input[type="checkbox"] {
+				float :none;
+			}
+			input#terms {
+			    margin: 6px 0px 0px -13px;
+			    outline: none;
+			}
+			.woocommerce-billing-fields {
+				margin-top: 0px;
+			}
+			.woocommerce-terms-and-conditions-wrapper {
+				padding-left: 21px;
 			}
 		}
 		@media only screen and (min-width: 600px) {

@@ -24,7 +24,7 @@ if ( ! is_ajax() ) {
 <h3 id="order_review_heading"><?php esc_html_e( 'Payment Methods', 'woocommerce' ); ?></h3>
 <div id="payment" class="woocommerce-checkout-payment">
 	<?php if ( WC()->cart->needs_payment() ) : ?>
-		<ul class="wc_payment_methods payment_methods methods">
+		<ul class="wc_payment_methods payment_methods methods mwb_payment_methods">
 			<?php
 			if ( ! empty( $available_gateways ) ) {
 				foreach ( $available_gateways as $gateway ) {

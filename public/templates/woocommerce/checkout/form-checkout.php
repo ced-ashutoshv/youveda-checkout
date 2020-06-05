@@ -92,6 +92,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 				</span>
 			</h3>
 			<?php do_action( 'woocommerce_checkout_order_review' ); ?>
+			<?php do_action( 'woocommerce_checkout_order_review_extended' ); ?>
 		</div>
 		<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
 	<?php endif; ?>
@@ -110,7 +111,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		<?php do_action( 'woocommerce_review_order_before_submit' ); ?>
 
 		<?php $order_button_text = 'Place order'; ?>
-		<?php echo apply_filters( 'woocommerce_order_button_html', '<button type="submit" class="button alt mwb_youveda_place_order_button" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '">' . esc_html( $order_button_text ) . '</button>' ); // @codingStandardsIgnoreLine ?>
+		<?php echo apply_filters( 'woocommerce_order_button_html_custom', '<button type="submit" class="button alt mwb_youveda_place_order_button" name="woocommerce_checkout_place_order" id="place_order" value="' . esc_attr( $order_button_text ) . '" data-value="' . esc_attr( $order_button_text ) . '">' . esc_html( $order_button_text ) . '</button>' ); // @codingStandardsIgnoreLine ?>
 
 		<?php do_action( 'woocommerce_review_order_after_submit' ); ?>
 

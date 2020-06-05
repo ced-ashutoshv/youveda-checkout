@@ -149,7 +149,7 @@ class Youveda_Checkout_Public {
 	 *
 	 * @since    1.0.0
 	 */
-	public function hook_unhook_woocommerce_templates(){
+	public function hook_unhook_woocommerce_templates() {
 
 		/**
 		 * Removal Of Actions.
