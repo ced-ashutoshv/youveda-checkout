@@ -65,6 +65,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 			</div>
 
 			<div class="payment-fields-wrap">
+				<h3 id="order_review_heading"><?php esc_html_e( 'Payment Methods', 'woocommerce' ); ?></h3>
 				<?php do_action( 'hook_woocommerce_checkout_payment' ); ?>
 			</div>
 
@@ -92,7 +93,6 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 				</span>
 			</h3>
 			<?php do_action( 'woocommerce_checkout_order_review' ); ?>
-			<?php do_action( 'woocommerce_checkout_order_review_extended' ); ?>
 		</div>
 		<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
 	<?php endif; ?>
@@ -119,5 +119,9 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 	</div>
 
 </form>
+<div class="mwb_yv_extended_sections">
+	<?php do_action( 'woocommerce_after_order_review_section' ); ?>
+	<?php do_action( 'woocommerce_checkout_order_review_extended' ); ?>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>

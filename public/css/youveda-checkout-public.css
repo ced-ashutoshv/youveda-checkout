@@ -11,6 +11,7 @@
  .checkout.woocommerce-checkout {
  	display: flex!important;
  	flex-wrap: wrap!important;
+ 	position: relative;
  }
  .woocommerce-shipping-fields {
  	padding-top: 12px;
@@ -175,24 +176,118 @@
  ul .wc_payment_methods.payment_methods.methods li:nth-child(1) {
  	margin-bottom: 0!important;
  }
-.woocommerce-terms-and-conditions-wrapper {
-    display: flex!important;
-    background: #ffffff;
-    max-width: 607px;
-    margin-bottom: 10px;
-    padding-left: 0px;
-    width: 100%;
-}
-input#terms {
-    margin: 7px 6px 0px 6px;
-    outline: none;
-}
-span.woocommerce-terms-and-conditions-checkbox-text {
-    font-size: 16px;
-}
-input#mailchimp_woocommerce_newsletter {
-    margin-right: 4px;
-}
+ .woocommerce-terms-and-conditions-wrapper {
+ 	display: flex!important;
+ 	background: #ffffff;
+ 	max-width: 607px;
+ 	margin-bottom: 10px;
+ 	padding-left: 0px;
+ 	width: 100%;
+ }
+ input#terms {
+ 	margin: 7px 6px 0px 6px;
+ 	outline: none;
+ }
+ span.woocommerce-terms-and-conditions-checkbox-text {
+ 	font-size: 16px;
+ }
+ input#mailchimp_woocommerce_newsletter {
+ 	margin-right: 4px;
+ }
+ .woocommerce-checkout .checkout_coupon {
+ 	margin-bottom: 0px !important;
+ 	display: block !important;
+ 	background: #ffffff;
+ 	padding: 10px;
+ }
+ form.checkout_coupon.woocommerce-form-coupon > p > button {
+ 	border-radius: 4px !important;
+ 	border-top-left-radius: 0 !important;
+ 	border-bottom-left-radius: 0!important;
+ }
+ #coupon_code {
+ 	border-top-right-radius: 0 !important;
+ 	border-bottom-right-radius: 0!important;
+
+ }
+ form.checkout_coupon.woocommerce-form-coupon > .form-row.form-row-first {
+ 	width: 100%;
+ 	max-width: 60%;
+ 	margin-right: 0!important;
+ 	margin-top: 16px;
+ }
+ form.checkout_coupon.woocommerce-form-coupon > .form-row.form-row-last {
+ 	width: 100%;
+ 	max-width: 40%;
+ }
+ form.checkout_coupon.woocommerce-form-coupon {
+ 	width: 100%;
+ }
+ .woocommerce-error.x-alert.x-alert-danger.x-alert-block {
+ 	background: #fff;
+ 	margin-top: 0;
+ 	width: 100%;
+ }
+
+
+/*.form-row.form-row-first {
+	width: 100%;
+	max-width: 75%;
+	margin-right: 0!important;
+	margin-top: 16px;
+	}*/
+/*.form-row.form-row-last {
+	width: 100%;
+	max-width: 25%;
+	}*/
+	.checkout_coupon.woocommerce-form-coupon {
+		display: flex !important;
+		flex-wrap: wrap!important;
+	}
+	.mwb_yv_extended_sections {
+		width: 100%;
+		max-width: 40%;
+	}
+	#order_review {
+		width: 100%;
+		max-width: 40%;
+		margin-left: 35px;
+		height: max-content;
+	}
+	#customer_details {
+		width: 100%;
+		max-width: 60%;
+		padding: 10px;
+		flex: 10%;
+	}
+	.mwb-custom-item-thumbnail {
+		position: relative;
+	}
+	.mwb-custom-item-quantity {
+		position: absolute;
+		top: 0;
+		left: 43px;
+	}
+	.mwb_yv_extended_sections {
+		position: absolute;
+		top: 28%;
+		left: auto;
+		right: 0;
+	}
+	.mwb_yv_extended_sections {
+		width: 100%;
+		max-width: 40%;
+	}
+	#wc-authorize-net-cim-credit-card-expiry_field {
+		margin-right: 4%;
+	}
+	.woocommerce-message.x-alert.x-alert-info.x-alert-block {
+		background: #fff;
+		margin-top: 31px;
+		width: 100%;
+	}
+
+
 /*-----------------------------
 		Media Query
 		-----------------------------*/
@@ -229,6 +324,17 @@ input#mailchimp_woocommerce_newsletter {
 				height: max-content;
 				margin-bottom: 8px;
 				padding: 0px;
+				order: 3;
+				margin-bottom: 0;
+			}
+			.mwb_youveda_compact_login {
+				order: 2;
+			}
+			.woocommerce-form-login-toggle {
+				order: 4;
+			}
+			form.woocommerce-form.woocommerce-form-login.login {
+				order: 3;
 			}
 			.woocommerce-checkout form h3 {
 				font-size: 19px !important;
@@ -261,24 +367,27 @@ input#mailchimp_woocommerce_newsletter {
 				top: 0;
 				left: 43px;
 			}
+			.woocommerce-message.x-alert.x-alert-info.x-alert-block {
+				margin-top: 0;
+			}
 		}
 		@media only screen and (max-width: 600px){
 			.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox {
-			    margin-top: 0px;
+				margin-top: 0px;
 			}
 			input#bill-to-different-address-checkbox {
-			    margin-top: 7px;
-			    margin-right: 3px;
+				margin-top: 7px;
+				margin-right: 3px;
 			}
 			.woocommerce-terms-and-conditions-wrapper {
-			   max-width: 100%;
+				max-width: 100%;
 			}
 			.woocommerce-checkout form input[type="checkbox"] {
 				float :none;
 			}
 			input#terms {
-			    margin: 6px 0px 0px -13px;
-			    outline: none;
+				margin: 6px 0px 0px -13px;
+				outline: none;
 			}
 			.woocommerce-billing-fields {
 				margin-top: 0px;
@@ -286,31 +395,29 @@ input#mailchimp_woocommerce_newsletter {
 			.woocommerce-terms-and-conditions-wrapper {
 				padding-left: 21px;
 			}
-		}
-		@media only screen and (min-width: 600px) {
+			.woocommerce {
+				display: flex;
+				flex-direction: column-reverse;
+			}
+			form.checkout_coupon.woocommerce-form-coupon > p > button  {
+				font-size: 16px;
+				padding: 12px 2px 12px 2px;
+			}
 			#order_review {
-				width: 100%;
-				max-width: 40%;
-				margin-left: 35px;
+				max-width: none;
 				height: max-content;
+				margin-left: 0;
 			}
 			#customer_details {
-				width: 100%;
-				max-width: 60%;
+				max-width: none;
 				padding: 10px;
 				flex: 10%;
 			}
-			#wc-authorize-net-cim-credit-card-expiry_field {
-				margin-right: 4%;
+			.mwb_yv_extended_sections {
+				max-width: none;
 			}
-			.mwb-custom-item-thumbnail {
-				position: relative;
+			.mwb_yv_extended_sections {
+				position: static;
 			}
-			.mwb-custom-item-quantity {
-				position: absolute;
-				top: 0;
-				left: 43px;
-			}
-
-			
 		}
+
