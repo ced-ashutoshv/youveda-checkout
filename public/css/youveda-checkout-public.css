@@ -94,7 +94,7 @@
  .wc_payment_method.payment_method_paypal {
  	position: absolute;
  	top: 0;
- 	left: 135px;
+ 	left: 130px;
  	right: auto;
  }
  .order_review_arrow_up {
@@ -170,7 +170,7 @@
  .wc_payment_method.payment_method_amazon_payments_advanced {
  	position: absolute;
  	top: 0;
- 	left: 240px;
+ 	left: 230px;
  	right: auto;
  }
  ul .wc_payment_methods.payment_methods.methods li:nth-child(1) {
@@ -227,65 +227,47 @@
  	background: #fff;
  	margin-top: 0;
  	width: 100%;
+ 	max-width: 607px;
  }
-
-
-/*.form-row.form-row-first {
-	width: 100%;
-	max-width: 75%;
-	margin-right: 0!important;
-	margin-top: 16px;
-	}*/
-/*.form-row.form-row-last {
-	width: 100%;
-	max-width: 25%;
-	}*/
-	.checkout_coupon.woocommerce-form-coupon {
-		display: flex !important;
-		flex-wrap: wrap!important;
-	}
-	.mwb_yv_extended_sections {
-		width: 100%;
-		max-width: 40%;
-	}
-	#order_review {
-		width: 100%;
-		max-width: 40%;
-		margin-left: 35px;
-		height: max-content;
-	}
-	#customer_details {
-		width: 100%;
-		max-width: 60%;
-		padding: 10px;
-		flex: 10%;
-	}
-	.mwb-custom-item-thumbnail {
-		position: relative;
-	}
-	.mwb-custom-item-quantity {
-		position: absolute;
-		top: 0;
-		left: 43px;
-	}
-	.mwb_yv_extended_sections {
-		position: absolute;
-		top: 28%;
-		left: auto;
-		right: 0;
-	}
-	.mwb_yv_extended_sections {
-		width: 100%;
-		max-width: 40%;
-	}
-	#wc-authorize-net-cim-credit-card-expiry_field {
-		margin-right: 4%;
-	}
-	.woocommerce-message.x-alert.x-alert-info.x-alert-block {
-		background: #fff;
-		margin-top: 31px;
-		width: 100%;
-	}
+ .checkout_coupon.woocommerce-form-coupon {
+ 	display: flex !important;
+ 	flex-wrap: wrap!important;
+ }
+ #order_review {
+ 	width: 100%;
+ 	max-width: 40%;
+ 	margin-left: 35px;
+ 	height: max-content;
+ }
+ #customer_details {
+ 	width: 100%;
+ 	max-width: 60%;
+ 	padding: 10px;
+ 	flex: 10%;
+ }
+ .mwb-custom-item-thumbnail {
+ 	position: relative;
+ }
+ .mwb-custom-item-quantity {
+ 	position: absolute;
+ 	top: 0;
+ 	left: 43px;
+ }
+ .mwb_yv_extended_sections {
+ 	position: absolute;
+ 	top: 30%;
+ 	left: auto;
+ 	right: 0;
+ 	width: 100%;
+ 	max-width: 40%;
+ }
+ #wc-authorize-net-cim-credit-card-expiry_field {
+ 	margin-right: 4%;
+ }
+ .woocommerce-message.x-alert.x-alert-info.x-alert-block {
+ 	background: #fff;
+ 	width: 100%;
+ }
 
 
 /*-----------------------------
@@ -294,9 +276,6 @@
 		@media only screen and (max-width: 1024px){
 			h3#order_review_heading {
 				padding: 10px;
-			}
-			.woocommerce-checkout-review-order-table {
-				display: none;
 			}
 			.woocommerce-notices-wrapper {
 				margin-bottom: 10px;
@@ -311,6 +290,9 @@
 			}
 			.wc_payment_method.payment_method_authorize_net_cim_credit_card {
 				width: 100%!important;
+			}
+			form.checkout_coupon.woocommerce-form-coupon > p > button {
+				padding: 0;
 			}
 		}
 		@media only screen and (max-width: 600px){
@@ -330,6 +312,9 @@
 			.mwb_youveda_compact_login {
 				order: 2;
 			}
+			
+			.mwb_youveda_compact_login > p{margin: 1rem 0;}
+			
 			.woocommerce-form-login-toggle {
 				order: 4;
 			}
@@ -369,6 +354,29 @@
 			}
 			.woocommerce-message.x-alert.x-alert-info.x-alert-block {
 				margin-top: 0;
+			}
+			.woocommerce-checkout form .payment_methods label img {
+				width: 100%;
+				max-width: 100px;
+				height: 38px;
+			}
+			.wc_payment_method.payment_method_amazon_payments_advanced {
+				position: absolute;
+				top: 0;
+				left: 209px;
+				right: auto;
+			}
+			.wc_payment_method.payment_method_paypal {
+				position: absolute;
+				top: 0;
+				left: 108px;
+				right: auto;
+			}
+			.wlpr-message-info.wlpr_points_rewards_earn_points {
+				order: 5;
+				margin-bottom: 6px;
+				font-size: 15px;
+				padding: 10px;
 			}
 		}
 		@media only screen and (max-width: 600px){
@@ -419,5 +427,26 @@
 			.mwb_yv_extended_sections {
 				position: static;
 			}
+			.woocommerce-checkout-review-order-table {
+				display: none;
+			}
 		}
-
+		@media only screen and (max-width: 358px){
+			.wc_payment_method.payment_method_amazon_payments_advanced {	
+				top: 46px;
+				left: 2px;
+				right: auto;
+			}
+			.payment_box.payment_method_authorize_net_cim_credit_card {
+				margin-top: 88px;
+			}
+			form.checkout_coupon.woocommerce-form-coupon > p > button {
+				padding: 1px 2px 1px 2px;
+			}
+		}
+		@media screen and (max-width: 1024px) and (min-width: 600px) {
+		.woocommerce-checkout form h3 {
+			margin-top: 60px;
+			font-size: 123%;
+		}
+		
